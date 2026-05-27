@@ -12,7 +12,10 @@
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "db:seed": "tsx scripts/seed.ts"
+    "db:seed": "tsx scripts/seed.ts",
+    "supabase:migrate": "bash scripts/supabase-migrate.sh schema",
+    "supabase:migrate:seed": "bash scripts/supabase-migrate.sh schema-seed",
+    "supabase:copy-local": "bash scripts/supabase-migrate.sh copy-local"
   },
   "dependencies": {
     "@better-auth/drizzle-adapter": "^1.6.11",
