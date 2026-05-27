@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sistem Pendataan Prestasi Mahasiswa
 
-## Getting Started
+Next.js App Router application for Jurusan Pendidikan Matematika achievement data collection.
 
-First, run the development server:
+## Setup
+
+Create `.env.local` from `env.example` and point it to a PostgreSQL database.
 
 ```bash
+npm install
+npm run db:docker
+npm run db:push
+npm run db:seed
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Demo accounts use NIM/NIP as Better Auth username and `prestasi-demo` as password unless `SEED_DEMO_PASSWORD` is changed.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Backend
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The backend uses Next.js API route handlers, Better Auth, Drizzle ORM, and PostgreSQL.
 
-## Learn More
+- `POST /api/auth/sign-in/username` - Better Auth NIM + password login.
+- `GET /api/me` - current authenticated user.
+- `GET /api/stats` - jurusan statistics for authenticated users.
+- `GET /api/categories` - category list.
+- `POST /api/categories` - create category, admin only.
+- `PATCH /api/categories` - update category, admin only.
+- `GET /api/achievements` - achievements with filters.
+- `POST /api/achievements` - create direct-record achievement.
+- `GET /api/achievements/:id` - achievement detail.
+- `PATCH /api/achievements/:id` - update achievement.
+- `DELETE /api/achievements/:id` - delete achievement, admin only.
+- `GET /api/export/achievements` - CSV export, dosen/admin only.
 
-To learn more about Next.js, take a look at the following resources:
+## Database Commands
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run db:docker
+npm run db:generate
+npm run db:migrate
+npm run db:push
+npm run db:studio
+npm run db:seed
+```
