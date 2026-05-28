@@ -62,12 +62,12 @@ export function LoginForm() {
         <span className="math-mark right-[39%] bottom-[36%] text-5xl">∑</span>
       </div>
 
-      <section className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] py-4">
+      <section className="relative z-10 mx-auto grid w-full max-w-6xl items-stretch gap-12 py-4 lg:grid-cols-[1.05fr_0.95fr]">
         
         {/* Left Column: Department Identity & Branding */}
-        <div className="space-y-8 lg:pr-8 text-left">
+        <div className="flex h-full flex-col justify-between gap-8 text-left lg:pr-8">
           
-          <div className="flex max-w-xl flex-col items-start gap-4 rounded-3xl border border-white/30 bg-white/15 p-4 shadow-2xl shadow-red-950/10 backdrop-blur-md sm:flex-row sm:items-center">
+          <div className="flex w-full max-w-xl flex-col items-start gap-4 rounded-3xl border border-white/30 bg-white/15 p-4 shadow-2xl shadow-red-950/10 backdrop-blur-md sm:flex-row sm:items-center">
             <div className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white p-1.5 shadow-md border border-white/60">
               <img src="/logo-ulm.png" alt="Logo ULM" className="h-16 w-16 object-contain" />
             </div>
@@ -81,7 +81,7 @@ export function LoginForm() {
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 pb-2 lg:pb-8">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/35 bg-white/15 px-4 py-1.5 text-xs font-semibold text-white shadow-sm backdrop-blur-xl">
               <Sparkles className="h-4 w-4 text-emerald-300" />
               Portal SIPRESMA
@@ -95,29 +95,6 @@ export function LoginForm() {
             <p className="max-w-xl text-base sm:text-lg leading-relaxed text-white/80">
               Platform terintegrasi untuk mencatat prestasi, memantau statistik mahasiswa, dan menyusun rekapitulasi pelaporan akreditasi program studi secara praktis dan transparan.
             </p>
-          </div>
-
-
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 max-w-lg">
-            <div className="flex items-start gap-3 rounded-2xl bg-white/15 p-4 border border-white/25 shadow-sm backdrop-blur-md hover:bg-white/20 transition-all duration-300 hover:-translate-y-0.5">
-              <div className="rounded-xl bg-white/20 p-2 text-amber-100">
-                <Sparkles className="h-5 w-5" />
-              </div>
-              <div>
-                <h4 className="font-bold text-white text-sm">Pendataan Mandiri</h4>
-                <p className="text-xs text-white/70 mt-0.5">Mahasiswa mengunggah bukti prestasi langsung dari dashboard pribadi.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 rounded-2xl bg-white/15 p-4 border border-white/25 shadow-sm backdrop-blur-md hover:bg-white/20 transition-all duration-300 hover:-translate-y-0.5">
-              <div className="rounded-xl bg-white/20 p-2 text-amber-100">
-                <ShieldCheck className="h-5 w-5" />
-              </div>
-              <div>
-                <h4 className="font-bold text-white text-sm">Validasi Terstruktur</h4>
-                <p className="text-xs text-white/70 mt-0.5">Verifikasi berjenjang oleh dosen pembimbing dan admin jurusan.</p>
-              </div>
-            </div>
           </div>
         </div>
 
